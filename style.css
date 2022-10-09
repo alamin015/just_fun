@@ -13,7 +13,7 @@ body{
 .body{
     max-width: 500px;
     width: 90%;
-    box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.1 );
     background-color: #fafafa;
     padding: 20px;
     height: auto;
@@ -46,4 +46,86 @@ input:focus{
 #submit.move{
     transform: translateX(100%);
     transition: 0.2s;
+}
+
+
+
+.popUp{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+    background: #fff;
+    width: 600px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.18);
+    
+}
+.popUp.active{
+    display: block;
+    visibility: visible;
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    
+
+}
+.pop_body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 600px;
+    
+}
+.nothing {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nothing span{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0D6EFD;
+    line-height: 80px;
+    display: inline-block;
+    text-align: center;
+}
+.nothing span.active{
+    animation: rotate 1s;
+    animation-delay: 0.4s;
+}
+.nothing span .fa-solid{
+    font-size: 40px;
+    color: #fff;
+}
+.nothing button{
+    padding: 10px 30px;
+    border: 1px solid #0D6EFD;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+.nothing button:hover{
+    cursor: pointer;
+    background: #0D6EFD;
+    color: #fff;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

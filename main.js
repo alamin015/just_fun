@@ -1,5 +1,8 @@
 const btn = document.getElementById('submit');
 const pass = document.getElementById('pass');
+const popUp = document.querySelector('.popUp');
+const span = document.querySelector('.span');
+const amr_btn = document.querySelector('.amr_btn');
 
 
 
@@ -33,8 +36,18 @@ pass.addEventListener('keyup',() =>{
     }
 })
 
+btn.addEventListener('click',() => {
+    const p = pass.value;
+    if(p == "123"){
+        popUp.classList.add('active');
+        span.classList.add('active')
+    }
+})
 
-
+amr_btn.addEventListener('click',() => {
+    popUp.classList.remove('active');
+    span.classList.remove('active')
+})
 
 
 
